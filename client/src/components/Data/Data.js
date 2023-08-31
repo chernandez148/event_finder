@@ -3,12 +3,12 @@ import { useEffect } from 'react'
 function Data({ setGeoLocation }) {
 
     const fetchGeoLocation = async () => {
-        const url = 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/';
+        const url = 'https://ip-geo-location.p.rapidapi.com/ip/check?format=json';
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '341721dfc3msh52cf0a669d33f1bp195e5bjsn6ada1036ef4e',
-                'X-RapidAPI-Host': 'ip-geolocation-ipwhois-io.p.rapidapi.com'
+                'X-RapidAPI-Key': 'c341580395mshf9a149316130441p1f1673jsn4a07a8ab5115',
+                'X-RapidAPI-Host': 'ip-geo-location.p.rapidapi.com'
             }
         };
 
