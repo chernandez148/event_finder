@@ -1,0 +1,140 @@
+@import url('../../fonts/fonts.css');
+
+.Navbar {
+    padding: .5rem;
+}
+
+.image-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-logo h2 {
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 500;
+}
+
+.Navbar nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Navbar form {
+    border: 1px solid #d7d7d7;
+    padding: 0.5rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 0.75rem;
+    transition: box-shadow .25s ease-in-out;
+}
+
+.Navbar .unfocused {
+    padding: 0;
+    padding-right: 0.5rem;
+    background: #ebebeb;
+    box-shadow: 0 2px 1px 1px #c4c4c43b;
+}
+
+.Navbar form:hover {
+    box-shadow: 0 2px 1px 1px #c4c4c43b;
+    cursor: pointer;
+}
+
+.Navbar input {
+    border: 0;
+    background-color: transparent;
+}
+
+.Navbar input:focus {
+    outline: none;
+}
+
+.focused {
+    padding: 1rem !important;
+    border: 1px solid #bdbdbd;
+    border-radius: 30px;
+    box-shadow: 0 0 3px 1px #bdbdbd;
+    margin-right: 0.5rem;
+    background: white !important;
+}
+
+.Navbar .city-input {
+    border-right: 1px solid #d7d7d7;
+    padding-left: 1rem;
+}
+
+.Navbar .date-input {
+    border-right: 1px solid #d7d7d7;
+    padding: 0 .5rem;
+}
+
+.Navbar .search-input {
+    padding: 0 .5rem;
+}
+
+.Navbar .submit-btn {
+    padding: 0.5rem;
+    border: 0;
+    margin: 0;
+    border-radius: 50%;
+    width: 35px;
+    background-color: #3FD9A1;
+    color: white;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Navbar .submit-btn:hover {
+    cursor: pointer;
+}
+
+.focused-btn {
+    width: initial !important;
+    height: initial !important;
+    border-radius: 35px !important;
+    padding: .75rem !important;
+    background: rgb(37, 194, 138);
+    background: -moz-linear-gradient(80deg, rgba(37, 194, 138, 1) 0%, rgba(63, 216, 161, 1) 100%);
+    background: -webkit-linear-gradient(80deg, rgba(37, 194, 138, 1) 0%, rgba(63, 216, 161, 1) 100%);
+    background: linear-gradient(80deg, rgba(37, 194, 138, 1) 0%, rgba(63, 216, 161, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#25c28a", endColorstr="#3fd8a1", GradientType=1);
+}
+
+.search-icon {
+    margin-right: .5rem;
+}
+
+.Navbar .user-btn {
+    color: #d7d7d7;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem .5rem;
+    background: transparent;
+    border-radius: 20px;
+    border: 1px solid #d7d7d7;
+    transition: box-shadow .25s ease-in-out;
+}
+
+.Navbar .user-btn:hover {
+    box-shadow: 0 2px 1px 1px #c4c4c43b;
+    cursor: pointer;
+}
+
+.Navbar .user-btn .hamburger {
+    margin-right: .5rem;
+}
+
+.Navbar hr {
+    border-color: #ffffff70;
+}
+
+@media (max-width: 1000px) {
+    .image-logo h2 {
+        display: none;
+    }
+}
