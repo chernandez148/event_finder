@@ -14,8 +14,8 @@ function Data({ setGeoLocation }) {
 
         try {
             const response = await fetch(url, options);
-            const result = await response.json();
-            setGeoLocation(result.city.name);
+            const result = await response.text();
+            setGeoLocation(result);
         } catch (error) {
             console.error(error);
         }
