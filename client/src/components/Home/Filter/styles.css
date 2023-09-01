@@ -12,7 +12,7 @@
     border: none;
     background-color: transparent;
     color: gray;
-    margin: 0 1rem;
+    margin: 0 .5rem;
     padding-bottom: .75rem;
     font-size: 14px;
     border-bottom: 2px solid rgba(255, 255, 255, 0);
@@ -27,5 +27,5 @@
 
 .filter-icon {
     height: auto;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import LoadingBar from 'react-top-loading-bar';
 import Data from './components/Data/Data'
 import Navbar from './components/Navbar/Navbar'
-import Filter from './components/Filter/FIlter'
+import Home from './components/Home/Home';
 import './App.css'
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
         onClick={handleUnfocused}
         className={`content ${conditionalDisplay ? "opacity-1" : "opacity-0"}`}
       >
-        <Filter />
+        <Home />
       </div>
       <h1 className={`loading ${!conditionalDisplay ? "opacity-1" : "opacity-0"}`}>Loading...</h1>
     </div>
