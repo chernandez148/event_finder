@@ -4,6 +4,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
 import owl from '../../assets/owl.png';
 import './styles.css';
+import Filter from '../Filter/FIlter';
 
 function Navbar({ inputFocus, setInputFocus }) {
 
@@ -83,6 +84,7 @@ function Navbar({ inputFocus, setInputFocus }) {
                     <FaUserCircle size={24} />
                 </button>
             </nav>
+            <Filter />
         </section>
     );
 }
