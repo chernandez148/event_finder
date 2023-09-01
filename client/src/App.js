@@ -32,7 +32,7 @@ function App() {
         {ticketmasterData && ticketmasterData._embedded && ticketmasterData._embedded.events.length > 0 ? (
           <h1>{ticketmasterData._embedded.events[0].name}</h1>
         ) : (
-          <h1>No events available</h1>
+          <h1>No events</h1>
         )}
       </div>
     </div>
