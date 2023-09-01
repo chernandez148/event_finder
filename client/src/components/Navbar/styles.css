@@ -1,9 +1,5 @@
 @import url('../../fonts/fonts.css');
 
-.Navbar {
-    padding: .5rem;
-}
-
 .image-logo {
     display: flex;
     justify-content: center;
@@ -19,6 +15,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: .5rem;
+    border-bottom: 1px solid #b9b9b970;
 }
 
 .Navbar form {
@@ -28,7 +26,7 @@
     display: flex;
     align-items: center;
     padding-left: 0.75rem;
-    transition: box-shadow .25s ease-in-out;
+    transition: box-shadow .25s ease-in-out, background-color .25s ease-in-out;
 }
 
 .Navbar .unfocused {
@@ -46,6 +44,7 @@
 .Navbar input {
     border: 0;
     background-color: transparent;
+    transition: background-color .25s ease-in-out;
 }
 
 .Navbar input:focus {
@@ -61,9 +60,12 @@
     background: white !important;
 }
 
+.ps-1 {
+    padding-left: 1rem;
+}
+
 .Navbar .city-input {
     border-right: 1px solid #d7d7d7;
-    padding-left: 1rem;
 }
 
 .Navbar .date-input {
@@ -127,10 +129,6 @@
 
 .Navbar .user-btn .hamburger {
     margin-right: .5rem;
-}
-
-.Navbar hr {
-    border-color: #ffffff70;
 }
 
 @media (max-width: 1000px) {

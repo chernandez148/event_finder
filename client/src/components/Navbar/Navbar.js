@@ -43,14 +43,15 @@ function Navbar({ inputFocus, setInputFocus }) {
                 </div>
                 <form className={inputFocus.city || inputFocus.date || inputFocus.search ? "unfocused" : ""}>
                     <input
-                        className={inputFocus.city ? 'city-input focused' : 'city-input'}
+                        className={`city-input ${inputFocus.city ? 'focused' : ''} ${inputFocus.city || inputFocus.date || inputFocus.search ? "ps-1" : ""}`}
                         type='text'
-                        placeholder='City or Zip Code'
+                        placeholder='Search City...'
                         onClick={handleCityFocus}
                     />
                     <input
                         className={inputFocus.date ? 'date-input focused' : 'date-input'}
-                        type='date'
+                        type='text'
+                        placeholder='Pick Your Date...'
                         onClick={handleDateFocus}
                     />
                     <input
@@ -82,7 +83,6 @@ function Navbar({ inputFocus, setInputFocus }) {
                     <FaUserCircle size={24} />
                 </button>
             </nav>
-            <hr />
         </section>
     );
 }
