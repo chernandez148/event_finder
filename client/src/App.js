@@ -5,13 +5,13 @@ import './App.css'
 
 function App() {
   const [geoLocation, setGeoLocation] = useState({})
+  const [ticketmasterData, setTicketmasterData] = useState({})
   const [inputFocus, setInputFocus] = useState({
     city: false,
     date: false,
     search: false,
   });
   console.log(inputFocus)
-  console.log(geoLocation)
 
   const handleUnfocused = () => {
     setInputFocus((prevFocus) => ({
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <Data setGeoLocation={setGeoLocation} />
+      <Data geoLocation={geoLocation} setGeoLocation={setGeoLocation} ticketmasterData={ticketmasterData} setTicketmasterData={setTicketmasterData} />
       <Navbar inputFocus={inputFocus} setInputFocus={setInputFocus} />
       <div
         onClick={handleUnfocused}
