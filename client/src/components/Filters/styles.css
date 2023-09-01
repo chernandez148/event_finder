@@ -1,0 +1,29 @@
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    background-color: transparent;
+    width: 3.5rem;
+    height: 4rem;
+    color: gray;
+    margin-right: 1rem;
+}
+
+.filter-btn:hover {
+    color: black;
+    border-bottom: 1px solid gray;
+}
+
+.filter-icon {
+    width: 65%;
+    height: auto;
+    padding-bottom: 5px;
+}
