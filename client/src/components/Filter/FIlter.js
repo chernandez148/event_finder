@@ -8,16 +8,16 @@ const Filter = () => {
     return (
         <section className='filters'>
             <button className='filter-btn'>
-                <PiGuitar className='filter-icon' size={18} />Concerts
+                <PiGuitar className='filter-icon' size={24} />Concerts
             </button>
             <button className='filter-btn'>
-                <MdOutlineFestival className='filter-icon' size={18} />Concerts
+                <MdOutlineFestival className='filter-icon' size={24} />Festivals
             </button>
             <button className='filter-btn'>
-                <GiConverseShoe className='filter-icon' size={18} />Concerts
+                <GiConverseShoe className='filter-icon' size={24} />Marathons
             </button>
             <button className='filter-btn'>
-                <LiaTheaterMasksSolid className='filter-icon' size={18} />Concerts
+                <LiaTheaterMasksSolid className='filter-icon' size={24} />Theatre
             </button>
         </section>
     )

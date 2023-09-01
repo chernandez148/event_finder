@@ -1,5 +1,14 @@
 @import url('../../fonts/fonts.css');
 
+.hoot {
+    position: relative;
+    top: -15px;
+    width: 60px;
+    right: -20px;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
 .image-logo {
     display: flex;
     justify-content: center;

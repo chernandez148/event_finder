@@ -11,19 +11,21 @@
     flex-direction: column;
     border: none;
     background-color: transparent;
-    width: 3.5rem;
-    height: 4rem;
     color: gray;
-    margin-right: 1rem;
+    margin: 0 1rem;
+    padding-bottom: .75rem;
+    font-size: 14px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    transition: border-color .5s ease-in-out, color .5s ease-in-out;
 }
 
 .filter-btn:hover {
     color: black;
-    border-bottom: 1px solid gray;
+    border-color: rgb(196, 196, 196);
+    cursor: pointer;
 }
 
 .filter-icon {
-    width: 65%;
     height: auto;
     padding-bottom: 5px;
 }
