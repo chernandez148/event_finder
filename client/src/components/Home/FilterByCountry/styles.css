@@ -5,6 +5,7 @@
 
 .Filter-By-Country ul {
     display: flex;
+    justify-content: space-between;
     padding: 0;
 }
 
@@ -14,6 +15,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0 1.25rem;
+    width: 50px;
 }
 
 .Filter-By-Country li:first-child {
