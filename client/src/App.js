@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Data from './components/Data/Data'
 import Navbar from './components/Navbar/Navbar'
 import './App.css'
+import Filters from './components/Filters/Filters'
 
 function App() {
   const [geoLocation, setGeoLocation] = useState({})
@@ -11,7 +12,7 @@ function App() {
     search: false,
   });
   console.log(inputFocus)
-  console.log(geoLocation)
+  
 
   const handleUnfocused = () => {
     setInputFocus((prevFocus) => ({
@@ -30,6 +31,7 @@ function App() {
         onClick={handleUnfocused}
         className='content'
       >
+        <Filters />
         Mains
       </div>
     </div>
