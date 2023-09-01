@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Data from './components/Data/Data'
 import Navbar from './components/Navbar/Navbar'
+import Filters from './components/Filters/Filters'
 import './App.css'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         onClick={handleUnfocused}
         className='content'
       >
+        <Filters />
         Mains
       </div>
     </div>
