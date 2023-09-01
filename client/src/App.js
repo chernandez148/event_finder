@@ -4,14 +4,13 @@ import Navbar from './components/Navbar/Navbar'
 import './App.css'
 
 function App() {
-  const [geoLocation, setGeoLocation] = useState({})
-  const [ticketmasterData, setTicketmasterData] = useState({})
+  const [geoLocation, setGeoLocation] = useState({});
+  const [ticketmasterData, setTicketmasterData] = useState({});
   const [inputFocus, setInputFocus] = useState({
     city: false,
     date: false,
     search: false,
   });
-  console.log(inputFocus)
 
   const handleUnfocused = () => {
     setInputFocus((prevFocus) => ({
@@ -30,7 +29,11 @@ function App() {
         onClick={handleUnfocused}
         className='content'
       >
-        Mains
+        {ticketmasterData && ticketmasterData._embedded && ticketmasterData._embedded.events.length > 0 ? (
+          <h1>{ticketmasterData._embedded.events[0].name}</h1>
+        ) : (
+          <h1>No events available</h1>
+        )}
       </div>
     </div>
   );

@@ -4,12 +4,12 @@ function Data({ setGeoLocation, geoLocation, ticketmasterData, setTicketmasterDa
     let isThrottled = false;
 
     const fetchGeoLocation = () => {
-        const url = 'https://ip-geo-location.p.rapidapi.com/ip/check?format=json';
+        const url = 'https://ip-geo-location4.p.rapidapi.com/';
         const options = {
             method: 'GET',
             headers: {
                 'X-RapidAPI-Key': 'c341580395mshf9a149316130441p1f1673jsn4a07a8ab5115',
-                'X-RapidAPI-Host': 'ip-geo-location.p.rapidapi.com'
+                'X-RapidAPI-Host': 'ip-geo-location4.p.rapidapi.com'
             }
         };
 
@@ -26,16 +26,16 @@ function Data({ setGeoLocation, geoLocation, ticketmasterData, setTicketmasterDa
             .catch(error => console.error('Fetch error:', error));
     };
 
-    console.log(geoLocation); // Display the fetched data
-
+    console.log(geoLocation)
 
     const fetchTicketmasterData = async () => {
+        if (geoLocation) {
 
-        if (typeof geoLocation === 'string') {
-            const url = `https://app.ticketmaster.com/discovery/v2/events.json?city=${geoLocation}&radius=50&apikey=QyLs9ifUcxSzP4ukMvAbhU0YX0GLJOgY`
+            const url = `https://app.ticketmaster.com/discovery/v2/events?apikey=QyLs9ifUcxSzP4ukMvAbhU0YX0GLJOgY&countryCode=US&city=${geoLocation}`
             const options = {
                 method: "GET"
             };
+
 
             fetch(url, options)
                 .then(resp => {
@@ -48,25 +48,28 @@ function Data({ setGeoLocation, geoLocation, ticketmasterData, setTicketmasterDa
                     setTicketmasterData(data)
                 })
                 .catch(error => console.error('Fetch error:', error));
-        } else {
-            return
+
         }
-
     }
-
+    //
     console.log(ticketmasterData)
 
     useEffect(() => {
         if (!isThrottled) {
             isThrottled = true;
             fetchGeoLocation();
-            fetchTicketmasterData();
 
             setTimeout(() => {
                 isThrottled = false;
-            }, 1000); // Adjust the delay (in milliseconds) as needed
+            }, 1000);
         }
     }, [])
+
+    useEffect(() => {
+        fetchTicketmasterData()
+
+    }, [geoLocation])
+
 
     return (
         null
