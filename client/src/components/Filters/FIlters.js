@@ -19,6 +19,9 @@ const Filters = () => {
         <button className='filter-btn'>
             <LiaTheaterMasksSolid className='filter-icon' size={18} />Concerts
         </button>
+        <button className='filter-btn'>
+            <LiaTheaterMasksSolid className='filter-icon' size={18} />Concerts
+        </button>
     </section>
   )
 }
