@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Filters from './Filters/FIlter'
 import FilterByCountry from './FilterByCountry/FilterByCountry'
 
-function Home({ setIsLoading, setiTcketmasterCountryData, countryQueryRef }) {
+function Home({ setIsLoading, setiTcketmasterCountryData, countryQueryRef, countryNameRef }) {
     const navigate = useNavigate()
 
     const handleSubmitByCategory = () => {
@@ -36,7 +36,7 @@ function Home({ setIsLoading, setiTcketmasterCountryData, countryQueryRef }) {
     return (
         <section className='Home'>
             <Filters />
-            <FilterByCountry countryQueryRef={countryQueryRef} handleSubmitByCategory={handleSubmitByCategory} />
+            <FilterByCountry countryQueryRef={countryQueryRef} countryNameRef={countryNameRef} handleSubmitByCategory={handleSubmitByCategory} />
         </section>
     )
 }

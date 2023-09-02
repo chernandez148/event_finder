@@ -9,6 +9,7 @@ import './App.css'
 
 function App() {
   const countryQueryRef = useRef("")
+  const countryNameRef = useRef("")
   const [isLoading, setIsLoading] = useState(false)
   const [progress, setProgress] = useState(0)
   const [geoLocation, setGeoLocation] = useState({});
@@ -71,8 +72,8 @@ function App() {
           className={`content ${conditionalDisplay ? "opacity-1" : "opacity-0"}`}
         >
           <Routes>
-            <Route path="/" element={<Home setIsLoading={setIsLoading} setiTcketmasterCountryData={setiTcketmasterCountryData} countryQueryRef={countryQueryRef} />} />
-            <Route path={`/search_results_by_country/${countryQueryRef.current}`} element={<SearchResultsByCountry ticketmasterCountryData={ticketmasterCountryData} countryQueryRef={countryQueryRef} />} />
+            <Route path="/" element={<Home setIsLoading={setIsLoading} setiTcketmasterCountryData={setiTcketmasterCountryData} countryQueryRef={countryQueryRef} countryNameRef={countryNameRef} />} />
+            <Route path={`/search_results_by_country/${countryQueryRef.current}`} element={<SearchResultsByCountry ticketmasterCountryData={ticketmasterCountryData} countryNameRef={countryNameRef} removeCountryData={removeCountryData} />} />
           </Routes>
         </div>
         <h1 className={`loading ${!conditionalDisplay ? "opacity-1" : "opacity-0"}`}>
