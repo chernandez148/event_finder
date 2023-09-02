@@ -18,6 +18,7 @@ const countries = [
 ];
 
 function FilterByCountry({ countryQueryRef, handleSubmitByCategory }) {
+
     const handleCountryClick = (countryName) => {
         countryQueryRef.current = countryName;
         handleSubmitByCategory()

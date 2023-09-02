@@ -1,10 +1,11 @@
-import React, { useState, useRef } from 'react'
+import React, { useRef } from 'react'
+import { useNavigate } from 'react-router-dom';
 import Filters from './Filters/FIlter'
 import FilterByCountry from './FilterByCountry/FilterByCountry'
 
-function Home({ setIsLoading }) {
-    const [ticketmasterCountryData, setiTcketmasterCountryData] = useState({})
+function Home({ setIsLoading, setiTcketmasterCountryData }) {
     const countryQueryRef = useRef("")
+    const navigate = useNavigate()
 
     const handleSubmitByCategory = () => {
         setIsLoading(true)
@@ -24,21 +25,19 @@ function Home({ setIsLoading }) {
                     return resp.json()
                 })
                 .then(data => {
-                    setiTcketmasterCountryData(data, countryQueryRef.current)
+                    setiTcketmasterCountryData(data)
                     setIsLoading(false)
+                    navigate('/search_results_by_category')
                 })
                 .catch(error => console.error('Fetch error:', error));
         }
 
     }
 
-    //No Japan, south korea, singapore, portugal, 
-
     return (
         <section className='Home'>
             <Filters />
             <FilterByCountry countryQueryRef={countryQueryRef} handleSubmitByCategory={handleSubmitByCategory} />
-            {ticketmasterCountryData ? <h4>{ticketmasterCountryData._embedded?.events[0].name}</h4> : null}
         </section>
     )
 }
