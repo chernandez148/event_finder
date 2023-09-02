@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FaUserCircle } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
@@ -6,7 +7,7 @@ import owl from '../../assets/owl.png';
 import hoot from '../../assets/hoot-hoot.png'
 import './styles.css';
 
-function Navbar({ inputFocus, setInputFocus, conditionalDisplay }) {
+function Navbar({ inputFocus, setInputFocus, conditionalDisplay, conditionalNavDisplay, removeCountryData }) {
 
     const handleCityFocus = () => {
         setInputFocus((prevFocus) => ({
@@ -37,12 +38,14 @@ function Navbar({ inputFocus, setInputFocus, conditionalDisplay }) {
 
     return (
         <section className='Navbar'>
-            <nav>
-                <div className='image-logo'>
-                    <img src={hoot} alt='Hoot' className={`hoot ${conditionalDisplay ? "opacity-1" : "opacity-0"}`} />
-                    <img src={owl} width='75px' alt='Owl Logo' />
-                    <h2>Event Finder</h2>
-                </div>
+            <nav className={conditionalNavDisplay ? "border-bottom-0" : "border-bottom-1"}>
+                <Link to="/" onClick={removeCountryData}>
+                    <div className='image-logo'>
+                        <img src={hoot} alt='Hoot' className={`hoot ${conditionalDisplay ? "opacity-1" : "opacity-0"}`} />
+                        <img src={owl} width='75px' alt='Owl Logo' />
+                        <h2>Event Finder</h2>
+                    </div>
+                </Link>
                 <form className={inputFocus.city || inputFocus.date || inputFocus.search ? "unfocused" : ""}>
                     <input
                         className={`city-input ${inputFocus.city ? 'focused' : ''} ${inputFocus.city || inputFocus.date || inputFocus.search ? "ps-1" : ""}`}
