@@ -37,7 +37,6 @@ function Data({ setGeoLocation, geoLocation, ticketmasterData, setTicketmasterDa
                 method: "GET"
             };
 
-
             fetch(url, options)
                 .then(resp => {
                     if (!resp.ok) {
@@ -51,7 +50,6 @@ function Data({ setGeoLocation, geoLocation, ticketmasterData, setTicketmasterDa
                     console.log(isLoading)
                 })
                 .catch(error => console.error('Fetch error:', error));
-
         }
     }
     //

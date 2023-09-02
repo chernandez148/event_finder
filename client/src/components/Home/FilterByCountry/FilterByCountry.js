@@ -17,9 +17,10 @@ const countries = [
     { name: 'Australia', countryCode: "AU", icon: 'australia.png' },
 ];
 
-function FilterByCountry({ setCountryQuery }) {
+function FilterByCountry({ setCountryQuery, handleSubmitByCategory }) {
     const handleCountryClick = (countryName) => {
         setCountryQuery(countryName);
+        handleSubmitByCategory()
     };
 
     return (
