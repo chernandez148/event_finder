@@ -1,13 +1,10 @@
-import { useState, useEffect } from 'react'
-import LoadingBar from 'react-top-loading-bar';
+import { useState } from 'react'
 import Data from './components/Data/Data'
 import Navbar from './components/Navbar/Navbar'
-import Home from './components/Home/Home';
 import './App.css'
+import Filters from './components/Filters/Filters';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false)
-  const [progress, setProgress] = useState(0)
   const [geoLocation, setGeoLocation] = useState({});
   const [ticketmasterData, setTicketmasterData] = useState({});
   const [inputFocus, setInputFocus] = useState({
@@ -25,40 +22,21 @@ function App() {
     }));
   }
 
-  useEffect(() => {
-    isLoading ? setProgress((prevProgress) => prevProgress + 1) : setProgress(100)
-  }, [isLoading])
-
-  const conditionalDisplay = ticketmasterData && ticketmasterData._embedded && ticketmasterData._embedded.events.length > 0
-
   return (
     <div className="App">
-      {isLoading ?
-        <LoadingBar
-          progress={progress}
-          height={2} // Customize the height of the loading bar
-          color='#5ad8a4' // Customize the loading bar color
-        /> : null}
-      <Data
-        geoLocation={geoLocation}
-        setGeoLocation={setGeoLocation}
-        ticketmasterData={ticketmasterData}
-        setTicketmasterData={setTicketmasterData}
-        isLoading={isLoading}
-        setIsLoading={setIsLoading}
-      />
-      <Navbar
-        conditionalDisplay={conditionalDisplay}
-        inputFocus={inputFocus}
-        setInputFocus={setInputFocus}
-      />
+      <Data geoLocation={geoLocation} setGeoLocation={setGeoLocation} ticketmasterData={ticketmasterData} setTicketmasterData={setTicketmasterData} />
+      <Navbar inputFocus={inputFocus} setInputFocus={setInputFocus} />
       <div
         onClick={handleUnfocused}
-        className={`content ${conditionalDisplay ? "opacity-1" : "opacity-0"}`}
+        className='content'
       >
-        <Home setIsLoading={setIsLoading} />
+        <Filters />
+        {ticketmasterData && ticketmasterData._embedded && ticketmasterData._embedded.events.length > 0 ? (
+          <h1>{ticketmasterData._embedded.events[0].name}</h1>
+        ) : (
+          <h1>No events available</h1>
+        )}
       </div>
-      <h1 className={`loading ${!conditionalDisplay ? "opacity-1" : "opacity-0"}`}>Loading...</h1>
     </div>
   );
 }
