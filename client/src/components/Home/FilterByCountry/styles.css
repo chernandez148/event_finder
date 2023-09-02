@@ -48,3 +48,21 @@
     opacity: 1;
     cursor: pointer;
 }
+
+@media screen and (max-width: 1440px) {
+    .Filter-By-Country ul {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .Filter-By-Country li:first-child {
+        margin-bottom: 1rem;
+        margin-left: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .Filter-By-Country {
+        width: 90%;
+    }
+}

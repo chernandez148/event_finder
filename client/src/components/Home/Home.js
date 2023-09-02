@@ -5,7 +5,6 @@ import FilterByCountry from './FilterByCountry/FilterByCountry'
 function Home({ setIsLoading }) {
     const [ticketmasterCountryData, setiTcketmasterCountryData] = useState({})
     const countryQueryRef = useRef("")
-    console.log(countryQueryRef)
 
     const handleSubmitByCategory = () => {
         setIsLoading(true)

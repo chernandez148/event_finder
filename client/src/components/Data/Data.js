@@ -26,8 +26,6 @@ function Data({ setGeoLocation, geoLocation, ticketmasterData, setTicketmasterDa
             .catch(error => console.error('Fetch error:', error));
     };
 
-    console.log(geoLocation)
-
     const fetchTicketmasterData = async () => {
         setIsLoading(true)
         if (geoLocation) {
@@ -47,13 +45,10 @@ function Data({ setGeoLocation, geoLocation, ticketmasterData, setTicketmasterDa
                 .then(data => {
                     setTicketmasterData(data)
                     setIsLoading(false)
-                    console.log(isLoading)
                 })
                 .catch(error => console.error('Fetch error:', error));
         }
     }
-    //
-    console.log(ticketmasterData)
 
     useEffect(() => {
         if (!isThrottled) {
