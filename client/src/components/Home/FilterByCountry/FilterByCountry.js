@@ -17,10 +17,11 @@ const countries = [
     { name: 'Australia', countryCode: "AU", icon: 'australia.png' },
 ];
 
-function FilterByCountry({ countryQueryRef, handleSubmitByCategory }) {
+function FilterByCountry({ countryQueryRef, countryNameRef, handleSubmitByCategory }) {
 
-    const handleCountryClick = (countryName) => {
-        countryQueryRef.current = countryName;
+    const handleCountryClick = (country) => {
+        countryQueryRef.current = country.countryCode;
+        countryNameRef.current = country.name
         handleSubmitByCategory()
     };
 
@@ -30,7 +31,7 @@ function FilterByCountry({ countryQueryRef, handleSubmitByCategory }) {
             <ul>
                 {countries.map((country) => (
                     <li key={country.name}>
-                        <button onClick={() => handleCountryClick(country.countryCode)}>
+                        <button onClick={() => handleCountryClick(country)}>
                             <img src={require(`../../../assets/${country.icon}`)} alt={country.name} />
                             {country.name}
                         </button>

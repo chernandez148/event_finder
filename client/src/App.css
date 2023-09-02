@@ -1,3 +1,10 @@
+@import url('./fonts/fonts.css');
+
+.App {
+  font-family: 'Inter', sans-serif;
+
+}
+
 .content {
   transition: opacity .5s ease-in-out;
 }

@@ -1,10 +1,9 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Filters from './Filters/FIlter'
 import FilterByCountry from './FilterByCountry/FilterByCountry'
 
-function Home({ setIsLoading, setiTcketmasterCountryData }) {
-    const countryQueryRef = useRef("")
+function Home({ setIsLoading, setiTcketmasterCountryData, countryQueryRef, countryNameRef }) {
     const navigate = useNavigate()
 
     const handleSubmitByCategory = () => {
@@ -27,7 +26,7 @@ function Home({ setIsLoading, setiTcketmasterCountryData }) {
                 .then(data => {
                     setiTcketmasterCountryData(data)
                     setIsLoading(false)
-                    navigate('/search_results_by_category')
+                    navigate(`/search_results_by_country/${countryQueryRef.current}`)
                 })
                 .catch(error => console.error('Fetch error:', error));
         }
@@ -37,7 +36,7 @@ function Home({ setIsLoading, setiTcketmasterCountryData }) {
     return (
         <section className='Home'>
             <Filters />
-            <FilterByCountry countryQueryRef={countryQueryRef} handleSubmitByCategory={handleSubmitByCategory} />
+            <FilterByCountry countryQueryRef={countryQueryRef} countryNameRef={countryNameRef} handleSubmitByCategory={handleSubmitByCategory} />
         </section>
     )
 }
