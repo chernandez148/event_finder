@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Filter from './Filter/FIlter'
 import FilterByCountry from './FilterByCountry/FilterByCountry'
 
 function Home({ setIsLoading }) {
-    const [countryQuery, setCountryQuery] = useState("")
     const [ticketmasterCountryData, setiTcketmasterCountryData] = useState({})
-    console.log(countryQuery)
+    const countryQueryRef = useRef("")
+    console.log(countryQueryRef)
 
     const handleSubmitByCategory = () => {
         setIsLoading(true)
 
-        if (countryQuery) {
+        if (countryQueryRef.current) {
 
-            const url = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${countryQuery}&apikey=QyLs9ifUcxSzP4ukMvAbhU0YX0GLJOgY`;
+            const url = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${countryQueryRef.current}&apikey=QyLs9ifUcxSzP4ukMvAbhU0YX0GLJOgY`;
             const options = {
                 method: "GET"
             };
@@ -25,7 +25,7 @@ function Home({ setIsLoading }) {
                     return resp.json()
                 })
                 .then(data => {
-                    setiTcketmasterCountryData(data, countryQuery)
+                    setiTcketmasterCountryData(data, countryQueryRef.current)
                     setIsLoading(false)
                 })
                 .catch(error => console.error('Fetch error:', error));
@@ -38,7 +38,7 @@ function Home({ setIsLoading }) {
     return (
         <section className='Home'>
             <Filter />
-            <FilterByCountry setCountryQuery={setCountryQuery} handleSubmitByCategory={handleSubmitByCategory} />
+            <FilterByCountry countryQueryRef={countryQueryRef} handleSubmitByCategory={handleSubmitByCategory} />
             {ticketmasterCountryData ? <h4>{ticketmasterCountryData._embedded?.events[0].name}</h4> : null}
         </section>
     )
