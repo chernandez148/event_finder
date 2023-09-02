@@ -55,11 +55,11 @@ function App() {
       />
       <div
         onClick={handleUnfocused}
-        className={content ${conditionalDisplay ? "opacity-1" : "opacity-0"}}
+        className={`content ${conditionalDisplay ? "opacity-1" : "opacity-0"}`}
       >
         <Home setIsLoading={setIsLoading} />
       </div>
-      <h1 className={loading ${!conditionalDisplay ? "opacity-1" : "opacity-0"}}>
+      <h1 className={`loading ${!conditionalDisplay ? "opacity-1" : "opacity-0"}`}>
         Loading...
       </h1>
     </div>
