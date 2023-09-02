@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import Filter from './Filter/FIlter'
+import Filters from './Filters/FIlter'
 import FilterByCountry from './FilterByCountry/FilterByCountry'
 
 function Home({ setIsLoading }) {
@@ -36,7 +36,7 @@ function Home({ setIsLoading }) {
 
     return (
         <section className='Home'>
-            <Filter />
+            <Filters />
             <FilterByCountry countryQueryRef={countryQueryRef} handleSubmitByCategory={handleSubmitByCategory} />
             {ticketmasterCountryData ? <h4>{ticketmasterCountryData._embedded?.events[0].name}</h4> : null}
         </section>
