@@ -28,7 +28,13 @@ function SearchResultsByCountry({ ticketmasterCountryData, countryNameRef, remov
                                 <div className='event-info'>
                                     <h4>{info.name}</h4>
                                     <h6>{info.dates.start.localDate}</h6>
-                                    <h6>{info._embedded.venues[0].address.line1}{info._embedded.venues[0].address.line2 ? `, ${info._embedded.venues[0].address.line2}` : null}, {info._embedded.venues[0].city.name}</h6>
+                                    {info._embedded.venues[0].address && ( // Check if address exists
+                                        <h6>
+                                            {info._embedded.venues[0].address.line1 ? `${info._embedded.venues[0].address.line1}` : null}
+                                            {info._embedded.venues[0].address.line2 ? `, ${info._embedded.venues[0].address.line2}` : null},
+                                            {info._embedded.venues[0].city.name}
+                                        </h6>
+                                    )}
                                 </div>
                             </li>
                         ))}
@@ -36,7 +42,6 @@ function SearchResultsByCountry({ ticketmasterCountryData, countryNameRef, remov
                 </div>
                 <div className='event-location'>google maps</div>
             </div>
-
         </section>
     )
 }
