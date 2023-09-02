@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-function Data({ setGeoLocation, geoLocation, ticketmasterData, setTicketmasterData }) {
+function Data({ setGeoLocation, geoLocation, ticketmasterData, setTicketmasterData, setIsLoading, isLoading }) {
     let isThrottled = false;
 
     const fetchGeoLocation = () => {
@@ -26,16 +26,14 @@ function Data({ setGeoLocation, geoLocation, ticketmasterData, setTicketmasterDa
             .catch(error => console.error('Fetch error:', error));
     };
 
-    console.log(geoLocation)
-
     const fetchTicketmasterData = async () => {
+        setIsLoading(true)
         if (geoLocation) {
 
             const url = `https://app.ticketmaster.com/discovery/v2/events?apikey=QyLs9ifUcxSzP4ukMvAbhU0YX0GLJOgY&countryCode=US&city=${geoLocation}`
             const options = {
                 method: "GET"
             };
-
 
             fetch(url, options)
                 .then(resp => {
@@ -46,13 +44,11 @@ function Data({ setGeoLocation, geoLocation, ticketmasterData, setTicketmasterDa
                 })
                 .then(data => {
                     setTicketmasterData(data)
+                    setIsLoading(false)
                 })
                 .catch(error => console.error('Fetch error:', error));
-
         }
     }
-    //
-    console.log(ticketmasterData)
 
     useEffect(() => {
         if (!isThrottled) {
