@@ -33,12 +33,13 @@ function App() {
 
   return (
     <div className="App">
-      {isLoading ?
+      {isLoading ? (
         <LoadingBar
           progress={progress}
           height={10} // Customize the height of the loading bar
           color='#5ad8a4' // Customize the loading bar color
-        /> : null}
+        />
+      ) : null}
       <Data
         geoLocation={geoLocation}
         setGeoLocation={setGeoLocation}
@@ -58,9 +59,12 @@ function App() {
       >
         <Home setIsLoading={setIsLoading} />
       </div>
-      <h1 className={loading ${!conditionalDisplay ? "opacity-1" : "opacity-0"}}>Loading...</h1>
+      <h1 className={loading ${!conditionalDisplay ? "opacity-1" : "opacity-0"}}>
+        Loading...
+      </h1>
     </div>
   );
+
 }
 
 export default App;
