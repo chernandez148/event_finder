@@ -36,6 +36,7 @@ function SearchResultsByCountry({ ticketmasterCountryData, countryNameRef, remov
                                         </h6>
                                     )}
                                 </div>
+                                <a className='ticket-link' href={info.url}>Buy Ticket</a>
                             </li>
                         ))}
                     </ul>

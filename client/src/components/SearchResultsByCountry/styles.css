@@ -3,8 +3,9 @@
     padding-top: 8rem;
     padding-bottom: 1rem;
     background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(138 177 163) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, #44c992 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#3fd8a1", GradientType=1);
+    box-shadow: 0 4px 5px #0000004f;
 }
 
 .SearchResultsByCategory a,
@@ -37,11 +38,11 @@
 
 .SearchResultsByCategory .country-wrapper {
     display: flex;
+    justify-content: center;
 }
 
 .SearchResultsByCategory .country-event-list {
     width: 33%;
-    margin: 0 auto;
 }
 
 .SearchResultsByCategory .country-event-list ul {
@@ -62,6 +63,7 @@
 
 .SearchResultsByCategory .event-card .event-info {
     padding-left: 1rem;
+    width: 300px;
 }
 
 .SearchResultsByCategory .event-info h4 {
@@ -71,6 +73,13 @@
 .SearchResultsByCategory .event-info h6 {
     margin: 0;
     color: gray;
+}
+
+.SearchResultsByCategory .ticket-link {
+    color: gray;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 }
 
 .SearchResultsByCategory .event-location {
