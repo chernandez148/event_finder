@@ -24,15 +24,15 @@ function SearchResultsByCountry({ ticketmasterCountryData, countryNameRef, remov
                     <ul>
                         {countryEventsList.map(info => (
                             <li key={info.id} className='event-card'>
-                                <img src={info.images[1].url} />
+                                <img src={info.images[1].url} alt={info.name} />
                                 <div className='event-info'>
                                     <h4>{info.name}</h4>
                                     <h6>{info.dates.start.localDate}</h6>
                                     {info._embedded.venues[0].address && ( // Check if address exists
                                         <h6>
-                                            {info._embedded.venues[0].address.line1 ? `${info._embedded.venues[0].address.line1}` : null}
-                                            {info._embedded.venues[0].address.line2 ? `, ${info._embedded.venues[0].address.line2}` : null},
-                                            {info._embedded.venues[0].city.name}
+                                            {info._embedded.venues[0].address.line1 ? `${info._embedded.venues[0].address.line1}` : 'TBA'}
+                                            {info._embedded.venues[0].address.line2 ? `, ${info._embedded.venues[0].address.line2}` : ''}
+                                            {info._embedded.venues[0].city ? `, ${info._embedded.venues[0].city.name}` : ''}
                                         </h6>
                                     )}
                                 </div>
