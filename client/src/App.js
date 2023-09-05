@@ -5,11 +5,14 @@ import Data from './components/Data/Data'
 import Navbar from './components/Navbar/Navbar'
 import Home from './components/Home/Home';
 import SearchResultsByCountry from './components/SearchResultsByCountry/SearchResultsByCountry';
+import SearchResultsByKeyword from './components/SearchResultsByKeyword/SearchResultsByKeyword';
 import './App.css'
 
 function App() {
   const countryQueryRef = useRef("")
   const countryNameRef = useRef("")
+  const [keyword, setKeyword] = useState("")
+  const [ticketmasterKeywordData, setTicketmasterKeywordData] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [progress, setProgress] = useState(0)
   const [geoLocation, setGeoLocation] = useState({});
@@ -72,8 +75,9 @@ function App() {
           className={`content ${conditionalDisplay ? "opacity-1" : "opacity-0"}`}
         >
           <Routes>
-            <Route path="/" element={<Home setIsLoading={setIsLoading} setiTcketmasterCountryData={setiTcketmasterCountryData} countryQueryRef={countryQueryRef} countryNameRef={countryNameRef} />} />
+            <Route path="/" element={<Home setIsLoading={setIsLoading} setiTcketmasterCountryData={setiTcketmasterCountryData} countryQueryRef={countryQueryRef} countryNameRef={countryNameRef} setTicketmasterKeywordData={setTicketmasterKeywordData} setKeyword={setKeyword}/>} />
             <Route path={`/search_results_by_country/${countryQueryRef.current}`} element={<SearchResultsByCountry ticketmasterCountryData={ticketmasterCountryData} countryNameRef={countryNameRef} removeCountryData={removeCountryData} />} />
+            <Route path={`/search_results_by_keyword/${keyword}`} element={<SearchResultsByKeyword ticketmasterKeywordData={ticketmasterKeywordData} keyword={keyword} setKeyword={setKeyword} />} />
           </Routes>
         </div>
         <h1 className={`loading ${!conditionalDisplay ? "opacity-1" : "opacity-0"}`}>

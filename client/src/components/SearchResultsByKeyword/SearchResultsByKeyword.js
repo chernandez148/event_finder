@@ -2,27 +2,27 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './styles.css'
 
-function SearchResultsByCountry({ ticketmasterCountryData, countryNameRef, removeCountryData }) {
-    const countryEventsList = ticketmasterCountryData._embedded.events
-    // console.log(countryEventsList)
+function SearchResultsByKeyword({ ticketmasterKeywordData, keyword, setKeyword }) {
+    const keywordEventsList = ticketmasterKeywordData._embedded.events
+    console.log(keywordEventsList)
 
     return (
         <section className='SearchResultsByCategory'>
             <div className='header'>
                 <div className='breadcrumbs'>
-                    <Link to="/" onClick={removeCountryData}>Home</Link>
+                    <Link to="/" onClick={()=>setKeyword('')}>Home</Link>
                     <span>/</span>
-                    <Link to="/" onClick={removeCountryData}>By Country</Link>
+                    <Link to="/" onClick={()=>setKeyword('')}>By Keyword</Link>
                     <span>/</span>
-                    <Link>{countryNameRef.current}</Link>
+                    <Link>{keyword}</Link>
                 </div>
-                <h1>Events in <span className='country-name'>{countryNameRef.current}</span></h1>
+                <h1>Events in <span className='keyword'>{keyword}</span></h1>
             </div>
             <div className='country-wrapper'>
                 <div className='country-event-list'>
-                    <h3>All events in {countryNameRef.current}</h3>
+                    <h3>All events that includes '{keyword}'</h3>
                     <ul>
-                        {countryEventsList.map(info => (
+                        {keywordEventsList.map(info => (
                             <li key={info.id} className='event-card'>
                                 <img src={info.images[1].url} alt={info.name} />
                                 <div className='event-info'>
@@ -47,4 +47,4 @@ function SearchResultsByCountry({ ticketmasterCountryData, countryNameRef, remov
     )
 }
 
-export default SearchResultsByCountry
+export default SearchResultsByKeyword
