@@ -4,11 +4,12 @@ import './styles.css'
 
 function SearchResultsByCountry({ ticketmasterCountryData, countryNameRef, removeCountryData }) {
     const countryEventsList = ticketmasterCountryData._embedded.events
-    console.log(countryEventsList)
+    console.log(countryEventsList, countryNameRef)
 
     return (
         <section className='SearchResultsByCategory'>
             <div className='header'>
+                <div className='overlay'></div>
                 <div className='breadcrumbs'>
                     <Link to="/" onClick={removeCountryData}>Home</Link>
                     <span>/</span>
