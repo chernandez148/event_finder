@@ -1,11 +1,11 @@
 .SearchResultsByCategory .header {
     padding: 0 10rem;
-    padding-top: 8rem;
+    padding-top: 15rem;
     padding-bottom: 1rem;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, #d5d5d5 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#3fd8a1", GradientType=1);
-    box-shadow: 0 4px 5px #0000002e;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/bg-green.jpg');
 }
 
 .SearchResultsByCategory a,
@@ -51,6 +51,7 @@
 
 .SearchResultsByCategory .event-card {
     display: flex;
+    align-items: center;
     padding: 1rem;
     padding-left: 0;
     border-bottom: 1px solid #d7d7d7;
