@@ -21,7 +21,7 @@ function FilterByCountry({ countryQueryRef, countryNameRef, handleSubmitByCatego
 
     const handleCountryClick = (country) => {
         countryQueryRef.current = country.countryCode;
-        countryNameRef.current = country.name
+        countryNameRef.current = country.name;
         handleSubmitByCategory()
     };
 
