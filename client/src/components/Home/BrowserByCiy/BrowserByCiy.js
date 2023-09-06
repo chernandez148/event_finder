@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.css'
 
-function BrowserByCity() {
+function BrowserByCity({ cityNameRef, handleSubmitByCity }) {
 
     const cities = [
         { name: "Los Angeles", icon: "los-angeles.png" },
@@ -11,8 +11,14 @@ function BrowserByCity() {
         { name: "Miami", icon: "miami.jpg" },
         { name: "Vancouver", icon: "vancouver.jpg" },
         { name: "Toronto", icon: "toronto.jpg" },
-        { name: "Montreal", icon: "montreal.jpg" }
+        { name: "Montreal", icon: "montreal.jpg" },
+        { name: "Mexico City", icon: "mexico-city.jpg" },
     ]
+
+    const handleCityQuery = (city) => {
+        cityNameRef.current = city.name
+        handleSubmitByCity()
+    }
 
     return (
         <section className='BrowserByCity'>
@@ -21,7 +27,7 @@ function BrowserByCity() {
                 <ul >
                     {cities.map((city) => (
                         <li key={city.name} >
-                            <button>
+                            <button onClick={() => handleCityQuery(city)}>
                                 <img src={require(`../../../assets/${city.icon}`)} alt={city.name} />
                                 {city.name}
                             </button>

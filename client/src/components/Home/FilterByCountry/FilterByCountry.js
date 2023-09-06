@@ -17,12 +17,12 @@ const countries = [
     { name: 'Australia', countryCode: "AU", icon: 'australia.png' },
 ];
 
-function FilterByCountry({ countryQueryRef, countryNameRef, handleSubmitByCategory }) {
+function FilterByCountry({ countryQueryRef, countryNameRef, handleSubmitByCountry }) {
 
     const handleCountryClick = (country) => {
         countryQueryRef.current = country.countryCode;
         countryNameRef.current = country.name;
-        handleSubmitByCategory()
+        handleSubmitByCountry()
     };
 
     return (
