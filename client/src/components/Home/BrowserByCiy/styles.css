@@ -1,3 +1,9 @@
+@property --var1 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: white;
+}
+
 .BrowserByCity {
     width: 80%;
     margin: 0 auto;
@@ -11,28 +17,23 @@
 .BrowserByCity ul {
     padding: 0 0 1.5rem 0;
     display: flex;
-    overflow-x: scroll;
-    scrollbar-width: auto;
-    scrollbar-color: #3fd8a1 #ffffff;
+    overflow-y: scroll;
+    transition: --var1 .5s;
+}
+
+.BrowserByCity ul:hover {
+    --var1: #3fd8a1;
 }
 
 .BrowserByCity ul::-webkit-scrollbar {
-    width: 16px;
-}
-
-.BrowserByCity ul::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: rgb(255, 255, 255);
+    width: 0;
+    height: 5px;
 }
 
 .BrowserByCity ul::-webkit-scrollbar-thumb {
-    background-color: #ffffff;
-    border-radius: 10px;
-    border: 6px solid #ffffff;
-    transition: background-color .5s ease-in-out;
-}
-
-.BrowserByCity ul:hover::-webkit-scrollbar-thumb {
-    background-color: #3fd8a1;
+    background: var(--var1);
+    border-radius: 4px;
 }
 
 .BrowserByCity li {

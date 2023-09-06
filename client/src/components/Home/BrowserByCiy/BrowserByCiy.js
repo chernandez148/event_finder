@@ -12,7 +12,7 @@ function BrowserByCity({ cityNameRef, handleSubmitByCity }) {
         { name: "Vancouver", icon: "vancouver.jpg" },
         { name: "Toronto", icon: "toronto.jpg" },
         { name: "Montreal", icon: "montreal.jpg" },
-        { name: "Mexico City", icon: "mexico-city.jpg" },
+        { name: "Guadalajara", icon: "guadalajara.jpg" },
     ]
 
     const handleCityQuery = (city) => {
