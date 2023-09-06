@@ -11,13 +11,33 @@
 .BrowserByCity ul {
     padding: 0;
     display: flex;
-    overflow-x: hidden;
-    width: 1350px;
+    overflow-x: scroll;
+    scrollbar-width: auto;
+    scrollbar-color: #3fd8a1 #ffffff;
+}
+
+.BrowserByCity ul::-webkit-scrollbar {
+    width: 16px;
+}
+
+.BrowserByCity ul::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.BrowserByCity ul::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 6px solid #ffffff;
+    transition: background-color .5s ease-in-out;
+}
+
+.BrowserByCity ul:hover::-webkit-scrollbar-thumb {
+    background-color: #3fd8a1;
 }
 
 .BrowserByCity li {
     list-style-type: none;
-    margin: 10px;
+    margin-right: 25px;
     transition: right .5s ease-in-out;
 }
 
