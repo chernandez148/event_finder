@@ -40,6 +40,10 @@ function App() {
     setiTcketmasterCountryData(null)
   }
 
+  const removeCityData = () => {
+    setTicketmasterCityData(null)
+  }
+
   useEffect(() => {
     isLoading ? setProgress((prevProgress) => prevProgress + 1) : setProgress(100)
   }, [isLoading])
@@ -81,7 +85,7 @@ function App() {
             <Route path="/" element={<Home setIsLoading={setIsLoading} setiTcketmasterCountryData={setiTcketmasterCountryData} countryQueryRef={countryQueryRef} countryNameRef={countryNameRef} cityNameRef={cityNameRef} setTicketmasterKeywordData={setTicketmasterKeywordData} setTicketmasterCityData={setTicketmasterCityData} setKeyword={setKeyword} />} />
             <Route path={`/search_results_by_keyword/${keyword}`} element={<SearchResultsByKeyword ticketmasterKeywordData={ticketmasterKeywordData} keyword={keyword} setKeyword={setKeyword} />} />
             <Route path={`/search_results_by_country/${countryQueryRef.current}`} element={<SearchResultsByCountry ticketmasterCountryData={ticketmasterCountryData} countryNameRef={countryNameRef} removeCountryData={removeCountryData} />} />
-            <Route path={`/search_results_by_city/${cityNameRef.current}`} element={<SearchResultsByCity ticketmasterCityData={ticketmasterCityData} />} />
+            <Route path={`/search_results_by_city/${cityNameRef.current}`} element={<SearchResultsByCity ticketmasterCityData={ticketmasterCityData} cityNameRef={cityNameRef} removeCityData={removeCityData} />} />
           </Routes>
         </div>
         <h1 className={`loading ${!conditionalDisplay ? "opacity-1" : "opacity-0"}`}>

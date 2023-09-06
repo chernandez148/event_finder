@@ -1,0 +1,88 @@
+.SearchResultsByCity .header {
+    padding: 0 10rem;
+    padding-top: 15rem;
+    padding-bottom: 1rem;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/bg-green.jpg');
+}
+
+.SearchResultsByCity a,
+.SearchResultsByCity span,
+.SearchResultsByCity h1 {
+    color: white;
+    text-decoration: none;
+}
+
+.SearchResultsByCity a,
+.SearchResultsByCity span {
+    font-weight: 400;
+}
+
+.SearchResultsByCity span {
+    margin: 0 .25rem;
+}
+
+.SearchResultsByCity h1 {
+    font-size: 40px;
+    margin-top: .5rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.SearchResultsByCity .City-name {
+    font-weight: 700;
+    margin: 0;
+}
+
+.SearchResultsByCity .City-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.SearchResultsByCity .City-event-list {
+    width: 33%;
+}
+
+.SearchResultsByCity .City-event-list ul {
+    padding: 0;
+}
+
+.SearchResultsByCity .event-card {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 0;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.SearchResultsByCity .event-card img {
+    width: 102.5px;
+    height: 57.5px;
+}
+
+.SearchResultsByCity .event-card .event-info {
+    padding-left: 1rem;
+    width: 300px;
+}
+
+.SearchResultsByCity .event-info h4 {
+    margin: .5rem 0;
+}
+
+.SearchResultsByCity .event-info h6 {
+    margin: 0;
+    color: gray;
+}
+
+.SearchResultsByCity .ticket-link {
+    color: gray;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.SearchResultsByCity .event-location {
+    width: 33%;
+}
