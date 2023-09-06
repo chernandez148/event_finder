@@ -6,7 +6,7 @@ function SearchResultsByCountry({ ticketmasterCountryData, countryNameRef, remov
     const countryEventsList = ticketmasterCountryData._embedded.events
 
     return (
-        <section className='SearchResultsByCategory'>
+        <section className='SearchResultsByCountry'>
             <div className='header'>
                 <div className='overlay'></div>
                 <div className='breadcrumbs'>

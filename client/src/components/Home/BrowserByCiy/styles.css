@@ -1,0 +1,58 @@
+.BrowserByCity {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.BrowserByCity .city-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.BrowserByCity ul {
+    padding: 0;
+    display: flex;
+    overflow-x: hidden;
+    width: 1350px;
+}
+
+.BrowserByCity li {
+    list-style-type: none;
+    margin: 10px;
+    transition: right .5s ease-in-out;
+}
+
+.BrowserByCity button {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+polyline {
+    stroke: white;
+}
+
+.BrowserByCity img {
+    width: 250px;
+    height: 100%;
+    border-radius: 25px;
+    padding-bottom: 1rem;
+    filter: brightness(0.9);
+    transition: filter .5s ease-in-out
+}
+
+.BrowserByCity img:hover {
+    filter: brightness(1);
+}
+
+.BrowserByCity .prev,
+.BrowserByCity .next {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50%;
+    background: #5ad8a4;
+    color: white;
+}

@@ -1,7 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import Filter from './Filters/Filter'
+import Filter from './Filters/FIlter'
 import FilterByCountry from './FilterByCountry/FilterByCountry'
+import BrowserByCiy from './BrowserByCiy/BrowserByCiy';
 
 function Home({ setIsLoading, setiTcketmasterCountryData, countryQueryRef, countryNameRef, setTicketmasterKeywordData, setKeyword }) {
     const navigate = useNavigate()
@@ -35,8 +36,9 @@ function Home({ setIsLoading, setiTcketmasterCountryData, countryQueryRef, count
 
     return (
         <section className='Home'>
-            <Filter setTicketmasterKeywordData={setTicketmasterKeywordData} setKeyword={setKeyword}/>
+            <Filter setTicketmasterKeywordData={setTicketmasterKeywordData} setKeyword={setKeyword} />
             <FilterByCountry countryQueryRef={countryQueryRef} countryNameRef={countryNameRef} handleSubmitByCategory={handleSubmitByCategory} />
+            <BrowserByCiy />
         </section>
     )
 }
